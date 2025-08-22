@@ -18,13 +18,13 @@ jobs:
           node-version: '18' # Use a recent LTS version
 
       - name: Install Dependencies
-        run: cd frontend && npm install
+        run: npm install
 
       - name: Build
-        run: cd frontend && npm run build
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/build
+          publish_dir: ./build
